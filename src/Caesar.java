@@ -12,14 +12,25 @@ public class Caesar {
 		// Read in shift
 		System.out.println("Enter shift letter:");
 		char shift = in.nextLine().toUpperCase().charAt(0);
-		int numshift = (int)(shift-'A');
+		int numshift = (int) (shift - 'A');
 		// Loop through message
 		for (int x = 0; x < message.length(); x++) {
 			char letter = message.charAt(x);
 			if (Character.isAlphabetic(letter)) {
-				letter = (char) ((int) letter + numshift);
-				if (letter > 'Z') {
-					letter = (char) ((int) letter - 26);
+				if (Character.isUpperCase(letter)) {
+					letter = (char) ((int) letter + numshift);
+					if (letter > 'Z') {
+						letter = (char) ((int) letter - 26);
+					}
+				} else {
+					if (Character.isAlphabetic(letter)) {
+						if (Character.isUpperCase(letter)) {
+							letter = (char) ((int) letter + numshift);
+							if (letter > 'z') {
+								letter = (char) ((int) letter - 26);
+							}
+						}
+					}
 				}
 			}
 			output += letter;
