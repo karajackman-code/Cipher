@@ -12,7 +12,6 @@ public class Box {
 		// Read in how many columns
 		System.out.println("How many columns do you want to encrypt with?");
 		int colnum = in.nextInt();
-		int num = 0;
 
 		// break the String into columns
 		for (int y = 0; y < colnum; y++) {
