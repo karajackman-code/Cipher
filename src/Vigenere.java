@@ -13,7 +13,7 @@ public class Vigenere {
 		System.out.println("Enter shift word:");
 		String shiftwrd = in.nextLine();
 		int numshift = 0;
-		int pos = 1;
+		int pos = 0;
 		// Loop through message
 		for (int x = 0; x < message.length(); x++) {
 			char letter = message.charAt(x);
